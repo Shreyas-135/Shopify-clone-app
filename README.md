@@ -10,7 +10,7 @@ This repo will create the server-side component for your Shopify app + the abili
 Step 1: Get the App Running Locally
 (this section is the same as garettB/shopify-flask-example)
 
-## Install dependencies
+### Install dependencies
 1. Clone the repo
     sh 
       gh repo clone Shreyas-135/Shopify-clone-app
@@ -47,10 +47,9 @@ You should be redirected to the admin dashboard of your test store. The url shou
 sh
   https://{{store_name}}.myshopify.com/admin/apps/{{app_name}}/app_launched
 
-Step 2: Get the App Running On Heroku
+### Get the App Running On Heroku
 sh
   Install the heroku command line: https://devcenter.heroku.com/categories/command-line
-sh
   # Create a remote heroku repo
   heroku git:remote -a shopify-streamlit
   # Launch a free tier dyno
@@ -64,12 +63,12 @@ sh
   # repeating for the rest of the .env variables
   Step 3: Get your Streamlit Dashboard Running on Heroku
   https://github.com/Shreyas-135/Shopify-clone-app
-sh
 
 Once it's up and running be sure to add the url to that dashboard into your environmental variables for this app
 
-# example:
+# Example:
 heroku config:set DASHBOARD_REDIRECT_URL=https://shoplit-dash.herokuapp.com
+
 Step 4: Get your DB setup and start retrieving order data
 Add a free postgres database onto this application through the heroku add-ons options.
 
@@ -82,14 +81,13 @@ heroku config:set DB=db_name
 heroku config:set DB_USER=db_user_name
 heroku config:set DB_PWD=db_password
 
-# port is assumed to be 5432
+# Port is assumed to be 5432
 Once setting your db parameters, you'll start downloading the store's order data.
 
 Understanding Each Component
 For more details on each component see here: https://github.com/garettB/shopify-flask-example#serverpy
 
 The only changes we make to these components are:
-
 Rather than showing the index page for shops that have successfully installed the app, we redirect them to the streamlit dashboard.
 We add a dash_auth function which uses Cryptographic nonce to authenticate the user on the streamlit dashboard.
 Warning: it's recommended to consult a security expert on the security risks around this redirect approach using nonce before deploying this into a production environment.
