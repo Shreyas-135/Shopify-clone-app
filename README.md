@@ -1,5 +1,6 @@
 # Shopify-clone-app
 A Simple Streamlit/Flask Shopify App
+
 This repo is forked from garettB/shopify-flask-example and adds a streamlit dashboard onto that flask Shopify App.
 
 ## What does this repo do?
@@ -12,21 +13,21 @@ Step 1: Get the App Running Locally
 ## Install dependencies
 1. Clone the repo
     sh 
-    gh repo clone Shreyas-135/Shopify-clone-app
+      gh repo clone Shreyas-135/Shopify-clone-app
     
 2. Install Python packages
     sh
-    pip install -r requirements.txt
+      pip install -r requirements.txt
     
 3. Run the application
     sh
-    python3 flask/server.py
+      python3 flask/server.py
    
 Leave this running. If new changes fail to appear, restart the server.
 
 Set up ngrok by installing it and running it locally.
 sh
-ngrok http 5001
+  ngrok http 5001
 
 Throughout the development process, ngrok should be running in the background. You will not need to restart this, as you will generate a new URL.
 
@@ -34,10 +35,9 @@ Set up your Shopify app, following these steps.
 
 Create a local .env file by copying over the template
 sh
-cp ./flask/.env.template ./flask/.env
+  cp ./flask/.env.template ./flask/.env
 
 Fill out your .env file using your Shopify API key and Shopify secret key. 
-
 Replace your_server.hostname with your ngrok base URL.
 Do not put quotations around the values.
 
@@ -45,25 +45,26 @@ Install the app onto a Shopify test store by following these steps. If you do no
 
 You should be redirected to the admin dashboard of your test store. The url should be formatted as follows
 sh
-https://{{store_name}}.myshopify.com/admin/apps/{{app_name}}/app_launched
+  https://{{store_name}}.myshopify.com/admin/apps/{{app_name}}/app_launched
 
 Step 2: Get the App Running On Heroku
 sh
-Install the heroku command line: https://devcenter.heroku.com/categories/command-line
-
-# Create a remote heroku repo
-heroku git:remote -a shopify-streamlit
-# Launch a free tier dyno
-heroku ps:scale web=1
-# Push your local main branch up to heroku
-git push heroku main
-# Or push a specific branch
-git push heroku new/connecting_w_streamlit_dyno:main
-# Add all your .env variables as environmental variables in heroku:
-heroku config:set SHOPIFY_API_KEY=<your_api_key>
-# repeating for the rest of the .env variables
-Step 3: Get your Streamlit Dashboard Running on Heroku
-See details here: https://github.com/Shreyas-135/Shopify-clone-app
+  Install the heroku command line: https://devcenter.heroku.com/categories/command-line
+sh
+  # Create a remote heroku repo
+  heroku git:remote -a shopify-streamlit
+  # Launch a free tier dyno
+  heroku ps:scale web=1
+  # Push your local main branch up to heroku
+  git push heroku main
+  # Or push a specific branch
+  git push heroku new/connecting_w_streamlit_dyno:main
+  # Add all your .env variables as environmental variables in heroku:
+  heroku config:set SHOPIFY_API_KEY=<your_api_key>
+  # repeating for the rest of the .env variables
+  Step 3: Get your Streamlit Dashboard Running on Heroku
+  https://github.com/Shreyas-135/Shopify-clone-app
+sh
 
 Once it's up and running be sure to add the url to that dashboard into your environmental variables for this app
 
