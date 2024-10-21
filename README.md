@@ -1,6 +1,5 @@
 # Shopify-clone-app
-A Simple Streamlit/Flask Shopify App
-
+A Simple Streamlit/Flask Shopify Clone App
 This repo is forked from garettB/shopify-flask-example and adds a streamlit dashboard onto that flask Shopify App.
 
 ## What does this repo do?
@@ -10,7 +9,8 @@ This repo will create the server-side component for your Shopify app + the abili
 Step 1: Get the App Running Locally
 (this section is the same as garettB/shopify-flask-example)
 
-### Install dependencies
+### Installation
+
 1. Clone the repo
     sh 
       gh repo clone Shreyas-135/Shopify-clone-app
@@ -22,19 +22,19 @@ Step 1: Get the App Running Locally
 3. Run the application
     sh
       python3 flask/server.py
-   
+
 Leave this running. If new changes fail to appear, restart the server.
 
 Set up ngrok by installing it and running it locally.
-sh
-  ngrok http 5001
+
+ngrok http 5001
 
 Throughout the development process, ngrok should be running in the background. You will not need to restart this, as you will generate a new URL.
 
 Set up your Shopify app, following these steps.
 
 Create a local .env file by copying over the template
-sh
+
   cp ./flask/.env.template ./flask/.env
 
 Fill out your .env file using your Shopify API key and Shopify secret key. 
@@ -44,11 +44,11 @@ Do not put quotations around the values.
 Install the app onto a Shopify test store by following these steps. If you do not have one, create one.
 
 You should be redirected to the admin dashboard of your test store. The url should be formatted as follows
-sh
+
   https://{{store_name}}.myshopify.com/admin/apps/{{app_name}}/app_launched
 
 ### Get the App Running On Heroku
-sh
+
   Install the heroku command line: https://devcenter.heroku.com/categories/command-line
   # Create a remote heroku repo
   heroku git:remote -a shopify-streamlit
